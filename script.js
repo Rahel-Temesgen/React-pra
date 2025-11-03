@@ -18,11 +18,24 @@ const jsxElement = (
     </ul>
 )
 
+const App = () => {
+    const myItem = "item3";
+    return (
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>{myItem}</li>
+            <li>{myItem.toUpperCase()}</li>
+        </ul>
+    )
+}
+
 // ReactDOM.render('Hello world!', reactContentRoot);
 // ReactDOM.render(firstElement, reactContentRoot);
 // ReactDOM.render(unorderedList, reactContentRoot);
 // ReactDOM.render(listOfUnorderedList, reactContentRoot);
-ReactDOM.render(jsxElement, reactContentRoot);
+// ReactDOM.render(jsxElement, reactContentRoot);
+ReactDOM.render(<App />, reactContentRoot);
 
 
 
