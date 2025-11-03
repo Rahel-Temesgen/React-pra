@@ -8,11 +8,13 @@ const listOfUnorderedList = React.createElement('ul', null, [
     React.createElement('li', null ,'item2'),
 ])
 
+const myItem = "item3";
 const jsxElement = (
     <ul>
         <li>item1</li>
         <li>item2</li>
-        <li>item3</li>
+        <li>{myItem}</li>
+        <li>{myItem.toUpperCase()}</li>
     </ul>
 )
 
