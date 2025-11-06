@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './CountButton.css'
 
 const CountButton = (props) => {
     const [currentCount, setCurrentCount] = useState(0);
@@ -9,21 +10,18 @@ const CountButton = (props) => {
 
 
     const divStyle = {
-        color: "red",
         margin: "6px"
     }
 
     const buttonStyle = {
         background: props.background,
-        fontSize: props.fontSize,
     }
 
     return (
     <div style={divStyle}>
-        <button style={buttonStyle} onClick={handleClick}>+{props.increamentBy}</button>
-        <div>{currentCount}</div>
+        <button style={buttonStyle} className='count-button' onClick={handleClick}>+{props.increamentBy}</button>
+        <div id="current-count">{currentCount}</div>
     </div>
-
     )
 }
 

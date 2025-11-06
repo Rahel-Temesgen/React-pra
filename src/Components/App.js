@@ -1,12 +1,12 @@
 import React from 'react'
-import CountButton from './CountButton'
+import CountButton from './CountButton/CountButton.js'
 
 const App = () => {
     return (
       <div>
-        <CountButton increamentBy={1} background={"brown"} fontSize={"12px"}/>
-        <CountButton increamentBy={5} background={"orange"} fontSize={"14px"}/>
-        <CountButton increamentBy={10} background={"green"} fontSize={"16px"}/>
+        <CountButton increamentBy={1} background={"brown"}/>
+        <CountButton increamentBy={5} background={"orange"}/>
+        <CountButton increamentBy={10} background={"green"}/>
       </div>
     )
 }
