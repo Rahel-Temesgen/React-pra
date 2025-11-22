@@ -1,13 +1,11 @@
 import colorNames from 'colornames'
+import { useState } from 'react'
 
-const AddColor = ({ 
-    newColor, 
-    setNewColor,
-    hexValue,
-    setHexValue,
-    isDarkText,
-    setIsDarkText
-    }) => {
+const AddColor = () => {
+
+    const [newColor, setNewColor] = useState("")
+    const [hexValue, setHexValue] = useState("")
+    const [isDarkText, setIsDarkText] = useState(true)
 
     const bgColor = {
         backgroundColor: newColor,

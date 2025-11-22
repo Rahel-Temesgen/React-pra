@@ -199,6 +199,10 @@ button:hover {
   text-align: center;
 }
 
+.addColorForm {
+  position: ralative;
+}
+
 .colorName {
   position: absolute;
   left: -99999px;
