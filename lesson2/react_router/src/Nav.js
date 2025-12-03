@@ -1,7 +1,22 @@
-import React from 'react'
-import { Link } from 'react-router-dom/cjs/react-router-dom.min'
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { useEffect } from 'react';
+import { useStoreActions, useStoreState } from 'easy-peasy';
 
-const Nav = ({ search, setSearch }) => {
+const Nav = () => {
+  const posts = useStoreState(state => state.posts);
+  const search = useStoreState(state => state.search);
+  const setSearch = useStoreActions(actions => actions.setSearch);
+  const setSearchResults = useStoreActions(actions => actions.setSearchResults);
+
+  useEffect(() => {
+        const filteredResults = posts.filter(post => (
+        (post.title).toLowerCase().includes(search.toLowerCase())
+        || (post.body).toLowerCase().includes(search.toLowerCase())
+        ));
+
+        setSearchResults(filteredResults.reverse());
+    }, [posts, search, setSearchResults]);
+
   return (
     <nav className='Nav'>
         <form className='searchForm' onSubmit={(e) => e.preventDefault()}>
