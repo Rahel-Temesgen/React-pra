@@ -8,7 +8,7 @@ const PostPage = () => {
     const post = getPostById(id);
     const history = useHistory();
 
-    const handleDelete = async (id) => {
+    const handleDelete = (id) => {
         deletePost(id);
         history.push('/');
     }
