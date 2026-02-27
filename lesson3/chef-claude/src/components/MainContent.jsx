@@ -6,6 +6,14 @@ import { getRecipeFromMistral } from "../ai"
 const MainContent = () => {
     const [ingredients, setIngredients] = React.useState([] );
     const [recipe, setRecipe] = React.useState("");
+    const recipeSection = React.useRef(null);
+    
+    React.useEffect(() => {
+        if (recipe !== "" && recipeSection.current !== "") {
+            recipeSection.current.scrollIntoView()
+        }
+    }, [recipe])
+    
 
     const ingredientsListItems = ingredients.map(ingredient => {
         return <li key={ingredient}>{ingredient}</li>
@@ -34,6 +42,7 @@ const MainContent = () => {
                 <button>Add Ingredient</button>
             </form>
             {ingredients.length > 0 && <IngredientsList 
+                ref={recipeSection}
                 ingredients={ingredients}
                 ingredientsListItems={ingredientsListItems}
                 getRecipe={getRecipe}
